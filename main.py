@@ -203,7 +203,7 @@ class VoiceRecorder:
             self.loading_message = "Initialize processor"
             self.processor = WhisperProcessor.from_pretrained(
                 "openai/whisper-large-v3-turbo",
-                language="english",
+                language="norwegian",
                 use_safetensors=True,
                 local_files_only=False
             )
@@ -246,7 +246,7 @@ class VoiceRecorder:
             generation_config.output_attentions = False
             generation_config.output_hidden_states = False
             generation_config.return_legacy_cache = False
-            generation_config.language = "english"
+            generation_config.language = "norwegian"
             
             # Set model to eval mode
             self.model.eval()
@@ -318,7 +318,7 @@ class VoiceRecorder:
             self.display_loading_progress(current_step, total_steps, start_time, "Loading processor")
             self.processor = WhisperProcessor.from_pretrained(
                 "openai/whisper-large-v3-turbo",
-                language="english",
+                language="norwegian",
                 use_safetensors=True
             )
             
@@ -356,7 +356,7 @@ class VoiceRecorder:
             generation_config.output_attentions = False
             generation_config.output_hidden_states = False
             generation_config.return_legacy_cache = False
-            generation_config.language = "english"
+            generation_config.language = "norwegian"
             
             # Set model to eval mode
             self.model.eval()
@@ -566,7 +566,7 @@ class VoiceRecorder:
                     max_new_tokens=128,
                     return_dict_in_generate=True,
                     output_scores=False,
-                    forced_decoder_ids=[[0, 50359]],  # Use forced_decoder_ids instead of language
+                    forced_decoder_ids=[[0, 50363]],  # Use Norwegian language token
                     num_beams=1,
                     do_sample=False,
                     use_cache=True

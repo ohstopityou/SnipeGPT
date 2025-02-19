@@ -1,7 +1,7 @@
 {
     "trigger_key": "f20",
     "keep_model_loaded": true,
-    "language": "auto",
+    "language": "norwegian",
     "audio": {
         "format": "float32",
         "channels": 1,
@@ -11,8 +11,8 @@
     "whisper": {
         "model": "openai/whisper-large-v3-turbo",
         "use_gpu": true,
-        "language": "auto",
-        "allowed_languages": ["en", "no"],
+        "language": "norwegian",
+        "allowed_languages": ["no", "en"],
         "streaming": {
             "buffer_duration": 3.0,
             "temperature": 0.0,
@@ -25,7 +25,7 @@
             "no_speech_threshold": 0.6,
             "compression_ratio_threshold": 1.5,
             "condition_on_previous_text": false,
-            "initial_prompt": "This is a bilingual transcription system for English and Norwegian only. Dette er et tospråklig transkripsjonsystem kun for engelsk og norsk.",
+            "initial_prompt": "Dette er en norsk transkripsjon som også kan inneholde engelske ord og uttrykk. Behold engelske tekniske termer og vanlige engelske uttrykk på engelsk (som 'nice', 'what', 'fuck', etc). For ord som kan være både norske og engelske, velg det som passer best i konteksten. Vær spesielt oppmerksom på tekniske termer som ofte brukes på engelsk i norsk tale.",
             "max_new_tokens": 444
         }
     }
