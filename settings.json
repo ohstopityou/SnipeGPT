@@ -1,0 +1,32 @@
+{
+    "trigger_key": "f20",
+    "keep_model_loaded": true,
+    "language": "auto",
+    "audio": {
+        "format": "float32",
+        "channels": 1,
+        "sample_rate": 16000,
+        "chunk_size": 2048
+    },
+    "whisper": {
+        "model": "openai/whisper-large-v3-turbo",
+        "use_gpu": true,
+        "language": "auto",
+        "allowed_languages": ["en", "no"],
+        "streaming": {
+            "buffer_duration": 3.0,
+            "temperature": 0.0,
+            "no_speech_threshold": 0.95,
+            "compression_ratio_threshold": 1.6,
+            "condition_on_previous_text": false
+        },
+        "final": {
+            "temperature": 0.0,
+            "no_speech_threshold": 0.6,
+            "compression_ratio_threshold": 1.5,
+            "condition_on_previous_text": false,
+            "initial_prompt": "This is a bilingual transcription system for English and Norwegian only. Dette er et tospråklig transkripsjonsystem kun for engelsk og norsk.",
+            "max_new_tokens": 444
+        }
+    }
+} 
